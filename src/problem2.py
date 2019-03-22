@@ -107,6 +107,13 @@ def test_problem2():
     problem3(string_of_characters)
     print('*********************************************')
 
+
+def reverse_string(string_of_characters):
+    string = ''
+    for k in range(len(string_of_characters)-1, -1, -1):
+        string = string + (string_of_characters[k])
+    return string
+
 def problem3(string_of_characters):
     """
     What comes in:
@@ -165,26 +172,28 @@ def problem3(string_of_characters):
        Reversed string: b21a
        The user entered a normal string
     """
-    # TODO: 3. Implement this function.
+    # DONE: 3. Implement this function.
     # To implement this function, you need to reverse a string.
     # If you write your own method to reverse a string and solve
     # the entire problem, you will get 25 points. If you use the
     # provided method reverseString(string),you will get 20 points
-    #length = len(string_of_characters)
-    #letters = 0
-    #numbers = 0
-    #for k in range(len(string_of_characters)-1, -1, -1):
-        #if string_of_characters[k].isnumeric():
-            #numbers = numbers + 1
-            #return numbers
-        #else:
-            #letters = letters + 1
-            #return letters
 
-    for k in range(len(string_of_characters)-1, -1, -1):
-        
-        print(string_of_characters[k])
-
+    print('String entered:', string_of_characters)
+    print('Length of string:', len(string_of_characters))
+    letters = 0
+    numbers = 0
+    for k in range(len(string_of_characters)):
+        if string_of_characters[k].isalpha() is True:
+            letters = letters + 1
+        else:
+            numbers = numbers + 1
+    print('Number of alphabetical characters:', letters)
+    print('Number of digits:', numbers)
+    print('reverse string:', reverse_string(string_of_characters))
+    if reverse_string(string_of_characters) == string_of_characters:
+        print('The user entered a palindrome')
+    else:
+        print('The user entered a normal string')
 
 
 
