@@ -154,11 +154,13 @@ class Elevator(object):
             return True
 
 # ---------------------------------------------------------------------
-#     TODO: 7. Write methods, AS NEEDED, to allow passengers to exit
+#     DONE: 7. Write methods, AS NEEDED, to allow passengers to exit
 #      the elevator.  Show that your solution works with a test case. (2 pts)
 #     Write the testing code (below) before writing this function.
 # ---------------------------------------------------------------------
 # ---------------------------------------------------------------------
+        if self.occupants - num_passengers < self.capacity:
+            return True
 
 ###############################################################################
 # The TEST functions for the  Elevator  class begin here.
@@ -262,6 +264,7 @@ def run_test_get_passengers():
     print("Actual:  ", e1.get_passengers(2))
     print("Actual  ", expected_capacity, expected_num_floors, expected_num_passengers)
     print()
+    print()
     e1 = Elevator(10, 8)
     expected_capacity = 10
     expected_num_floors = 8
@@ -271,9 +274,7 @@ def run_test_get_passengers():
     print("Actual:  ", e1.get_passengers(12))
     print("Actual  ", expected_capacity, expected_num_floors, expected_num_passengers)
     print()
-    print("Actual:  ", e1.get_passengers(2))
-    print("Actual  ", expected_capacity, expected_num_floors, expected_num_passengers)
-    print()
+
     e1 = Elevator(14, 18)
     expected_capacity = 14
     expected_num_floors = 18
